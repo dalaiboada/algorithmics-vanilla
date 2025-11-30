@@ -1,1 +1,1 @@
-# algorithmics-vanilla
+# Algorithmics
