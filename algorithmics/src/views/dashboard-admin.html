@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/pages/dashboards/admin.css">
+
+    <title>Administrador</title>
+</head>
+<body>
+    <main class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="logo-text">Algorithmics</div>
+                </a>
+            </div>
+            
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-name">Carlos Rodríguez</div>
+                <div class="user-role">Administrador</div>
+            </div>
+            
+            <div class="sidebar-nav">
+                <a href="#" class="nav-item active" data-panel="dashboard">
+                    <div class="nav-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="nav-text">Dashboard</div>
+                </a>
+                <a href="#" class="nav-item" data-panel="profile">
+                    <div class="nav-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="nav-text">Perfil</div>
+                </a>
+                <a href="#" class="nav-item" data-panel="olympics">
+                    <div class="nav-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="nav-text">Olimpiadas</div>
+                </a>
+                <a href="#" class="nav-item" data-panel="courses">
+                    <div class="nav-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="nav-text">Cursos</div>
+                </a>
+                <a href="#" class="nav-item" data-panel="users">
+                    <div class="nav-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="nav-text">Usuarios</div>
+                </a>
+                <!-- Nuevo enlace para Reportes -->
+                <a href="#" class="nav-item" data-panel="reports">
+                    <div class="nav-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="nav-text">Reportes</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="main-content">
+
+            <div class="top-bar">
+                <div class="page-title">Dashboard</div>
+                <div class="user-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge"></div>
+                    </div>
+
+                    <div class="user-dropdown">
+                        <div class="user-avatar logout-trigger" style="width: 40px; height: 40px; font-size: 1rem;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        
+                        <!-- Dropdown Menu para Cerrar Sesión -->
+                        <div class="dropdown-menu" id="logoutDropdown">
+                            <div class="dropdown-header">
+                                <div class="dropdown-user-info">
+                                    <div class="dropdown-user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="dropdown-user-text">
+                                        <h4>Carlos Rodríguez</h4>
+                                        <p>Administrador</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-item logout" id="logoutOption">
+                                <div class="dropdown-icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                                <div class="dropdown-text">Cerrar Sesión</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <!-- Panel de Dashboard -->
+                <div class="panel active" id="dashboard">
+
+                    <!-- Estadísticas Generales -->
+                    <div class="stats-grid">
+
+                        <!-- Usuarios Activos -->
+                        <div class="stat-card">
+                            <div class="stat-icon users">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">1,248</div>
+                                <div class="stat-label">Usuarios Activos</div>
+                            </div>
+                        </div>
+
+                        <!-- Cursos Activos -->
+                        <div class="stat-card">
+                            <div class="stat-icon courses">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">24</div>
+                                <div class="stat-label">Cursos Activos</div>
+                            </div>
+                        </div>
+
+                        <!-- Olimpiadas Activas -->
+                        <div class="stat-card">
+                            <div class="stat-icon olympics">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Olimpiadas Activas</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actividad Reciente -->
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Actividad Reciente</div>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Usuario</th>
+                                            <th>Acción</th>
+                                            <th>Fecha</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>María González</td>
+                                            <td>Completó el curso de Python</td>
+                                            <td>Hace 2 horas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Javier Pérez</td>
+                                            <td>Se registró en Olimpiada de Algoritmos</td>
+                                            <td>Hace 5 horas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ana López</td>
+                                            <td>Actualizó su perfil</td>
+                                            <td>Hace 1 día</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Carlos Mendoza</td>
+                                            <td>Completó evaluación final</td>
+                                            <td>Hace 2 días</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Cursos Populares</div>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Curso</th>
+                                            <th>Inscritos</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Python para Principiantes</td>
+                                            <td>342</td>
+                                            <td><span class="badge badge-success">Activo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Algoritmos Avanzados</td>
+                                            <td>198</td>
+                                            <td><span class="badge badge-success">Activo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Machine Learning</td>
+                                            <td>156</td>
+                                            <td><span class="badge badge-warning">Próximamente</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Desarrollo Web Full Stack</td>
+                                            <td>287</td>
+                                            <td><span class="badge badge-success">Activo</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de Perfil -->
+                <div class="panel" id="profile">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Mi Perfil</div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="grid-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Nombre</label>
+                                    <input type="text" id="name" class="form-input" value="Carlos Rodríguez">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Apellido</label>
+                                    <input type="text" id="name" class="form-input" value="Carlos Rodríguez">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Correo Electrónico</label>
+                                    <input type="email" id="email" class="form-input" value="carlos.rodriguez@algorithmics.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Clave</label>
+                                    <input type="text" id="phone" class="form-input" value="+1 234 567 890">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="role">Rol</label>
+                                    <input type="text" id="role" class="form-input" value="Administrador" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de Olimpiadas -->
+                <div class="panel" id="olympics">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Gestión de Olimpiadas</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="grid-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-title">Olimpiada Nacional</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Estado:</strong> <span class="badge badge-success">Activa</span></p>
+                                        <p><strong>Participantes:</strong> 342</p>
+                                        <p><strong>Fecha Inicio:</strong> 15 Oct 2023</p>
+                                        <p><strong>Fecha Fin:</strong> 30 Nov 2023</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-primary">Gestionar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-title">Olimpiada Internacional</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Estado:</strong> <span class="badge badge-warning">Próximamente</span></p>
+                                        <p><strong>Participantes:</strong> 0</p>
+                                        <p><strong>Fecha Inicio:</strong> 01 Ene 2024</p>
+                                        <p><strong>Fecha Fin:</strong> 28 Feb 2024</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-primary">Configurar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-title">Olimpiada Junior</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Estado:</strong> <span class="badge badge-error">Finalizada</span></p>
+                                        <p><strong>Participantes:</strong> 215</p>
+                                        <p><strong>Fecha Inicio:</strong> 01 Jun 2023</p>
+                                        <p><strong>Fecha Fin:</strong> 31 Jul 2023</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-secondary">Ver Resultados</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de Cursos -->
+                <div class="panel" id="courses">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Gestión de Cursos</div>
+                        </div>
+
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Curso</th>
+                                        <th>Módulos</th>
+                                        <th>Estudiantes</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Python para Principiantes</td>
+                                        <td>5</td>
+                                        <td>342</td>
+                                        <td><span class="badge badge-success">Activo</span></td>
+
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Algoritmos Avanzados</td>
+                                        <td>5</td>
+                                        <td>198</td>
+                                        <td><span class="badge badge-success">Activo</span></td>
+
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Machine Learning</td>
+                                        <td>5</td>
+                                        <td>156</td>
+                                        <td><span class="badge badge-warning">En Desarrollo</span></td>
+
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Desarrollo Web Full Stack</td>
+                                        <td>4</td>
+                                        <td>287</td>
+                                        <td><span class="badge badge-success">Activo</span></td>
+
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-footer">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus" style="padding-right: 0.5rem;"></i> Nuevo Curso
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de Usuarios -->
+                <div class="panel" id="users">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Gestión de Usuarios</div>
+                        </div>
+
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Correo</th>
+                                        <th>Rol</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>María González</td>
+                                        <td>maria.gonzalez@email.com</td>
+                                        <td>Estudiante</td>
+                                        <td><span class="badge badge-success">Activo</span></td>
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Javier Pérez</td>
+                                        <td>javier.perez@email.com</td>
+                                        <td>Estudiante</td>
+                                        <td><span class="badge badge-success">Activo</span></td>
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Ana López</td>
+                                        <td>ana.lopez@email.com</td>
+                                        <td>Personal Académico</td>
+                                        <td><span class="badge badge-success">Activo</span></td>
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Carlos Mendoza</td>
+                                        <td>carlos.mendoza@email.com</td>
+                                        <td>Estudiante</td>
+                                        <td><span class="badge badge-error">Inactivo</span></td>
+                                        <td>
+                                            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Editar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus" style="padding-right: 0.5rem;"></i> Nuevo Usuario
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de Generación de Reportes -->
+                <div class="panel" id="reports">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Generación de Reportes en PDF</div>
+                            <div class="stat-label">Crea reportes detallados en formato PDF para diferentes áreas del sistema</div>
+                        </div>
+
+                        <!-- Tipos de Reportes Disponibles -->
+                        <div class="card-body">
+
+                            <!-- Filtros y Configuración -->
+                            <div class="report-filters">
+                                <h3 style="margin-bottom: 1rem; color: var(--primary-700);">Filtros y Configuración</h3>
+                                
+                                <div class="grid-2">
+
+                                    <!-- Tipo de Reporte -->
+                                    <div class="form-group">
+                                        <label class="form-label" for="reportType">Tipo de Reporte</label>
+                                        <select id="reportType" class="form-input">
+                                            <option value="usuarios">Reporte de Usuarios</option>
+                                            <option value="cursos">Reporte de Cursos</option>
+                                            <option value="inscripciones">Reporte de Inscripciones</option>
+                                            <option value="ingresos">Reporte de Ingresos</option>
+                                            <option value="olimpiadas">Reporte de Olimpiadas</option>
+                                            <option value="actividad">Reporte de Actividad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Rango de Fechas -->
+                                <div class="form-group">
+                                    <label class="form-label">Rango de Fechas</label>
+                                    <div class="date-range">
+                                        <input type="date" id="startDate" class="form-input" value="2023-01-01">
+                                        <input type="date" id="endDate" class="form-input" value="2023-12-31">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tipos de Reportes -->
+                            <h3 style="margin-bottom: 1rem; color: var(--primary-700);">Selecciona un Tipo de Reporte</h3>
+                            
+                            <div class="report-types-grid">
+                               <!--  Reporte de Usuarios -->
+                                <div class="report-type-card" data-report="usuarios">
+                                    <div class="report-type-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+
+                                    <h4 class="report-type-title">Reporte de Usuarios</h4>
+
+                                    <p class="report-type-description">Listado completo de usuarios registrados con información detallada de cada uno.</p>
+                                    
+                                    <button class="btn btn-primary btn-generar-reporte" data-report="usuarios">
+                                        <i class="fas fa-file-pdf"></i> Generar Reporte
+                                    </button>
+                                </div>
+                                
+                                <!-- Reporte de Cursos -->
+                                <div class="report-type-card" data-report="cursos">
+                                    <div class="report-type-icon">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
+                                    <h4 class="report-type-title">Reporte de Cursos</h4>
+                                    <p class="report-type-description">Información detallada de todos los cursos, inscripciones y rendimiento.</p>
+                                    <button class="btn btn-primary btn-generar-reporte" data-report="cursos">
+                                        <i class="fas fa-file-pdf"></i> Generar Reporte
+                                    </button>
+                                </div>
+                                
+                                <!-- Reporte de Olimpiadas -->
+                                <div class="report-type-card" data-report="olimpiadas">
+                                    <div class="report-type-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h4 class="report-type-title">Reporte de Olimpiadas</h4>
+                                    <p class="report-type-description">Resultados, participantes y estadísticas de todas las olimpiadas.</p>
+                                    <button class="btn btn-primary btn-generar-reporte" data-report="olimpiadas">
+                                        <i class="fas fa-file-pdf"></i> Generar Reporte
+                                    </button>
+                                </div>
+                                
+                                <!-- Reporte de Actividad -->
+                                <div class="report-type-card" data-report="actividad">
+                                    <div class="report-type-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h4 class="report-type-title">Reporte de Actividad</h4>
+                                    <p class="report-type-description">Análisis de actividad de usuarios, cursos completados y participación.</p>
+                                    <button class="btn btn-primary btn-generar-reporte" data-report="actividad">
+                                        <i class="fas fa-file-pdf"></i> Generar Reporte
+                                    </button>
+                                </div>
+                                
+                                <!-- Reporte de Inscripciones -->
+                                <div class="report-type-card" data-report="inscripciones">
+                                    <div class="report-type-icon">
+                                        <i class="fas fa-clipboard-list"></i>
+                                    </div>
+                                    <h4 class="report-type-title">Reporte de Inscripciones</h4>
+                                    <p class="report-type-description">Tendencias de inscripciones a cursos y olimpiadas por período.</p>
+                                    <button class="btn btn-primary btn-generar-reporte" data-report="inscripciones">
+                                        <i class="fas fa-file-pdf"></i> Generar Reporte
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Indicador de Carga -->
+                            <div class="loading-indicator" id="loadingIndicator">
+                                <div class="spinner"></div>
+
+                                <div>
+                                    <p>Generando reporte en PDF...</p>
+                                    <p style="font-size: 0.875rem; color: var(--text-tertiary);">Por favor, espera unos momentos.</p>
+                                </div>
+                            </div>
+
+                            <!-- Vista Previa del Reporte -->
+                            <div class="report-preview" id="reportPreview">
+                                <div class="preview-header">
+                                    <h3 class="preview-title">Vista Previa del Reporte</h3>
+
+                                    <div class="preview-actions">
+                                        <button class="btn btn-secondary" id="btnDescargar">
+                                            <i class="fas fa-download"></i> Descargar PDF
+                                        </button>
+
+                                        <button class="btn btn-danger" id="btnCerrarPreview">
+                                            <i class="fas fa-times"></i> Cerrar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="previewContent">
+                                    <!-- El contenido del reporte se generará aquí -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para crear nuevo curso -->
+    <div class="modal-overlay" id="modalNuevoCurso">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-book"></i> Crear Nuevo Curso
+                </h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-steps">
+                <div class="step active" data-step="1">
+                    <span class="step-number">1</span>
+                    Información General
+                </div>
+
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    Módulos
+                </div>
+
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    Proyecto Final
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Paso 1: Información General -->
+                <div class="step-content active" id="step1">
+                    <form id="cursoForm">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Nombre del Curso <span class="required">*</span>
+                            </label>
+
+                            <input type="text" class="form-input" id="cursoNombre" 
+                                   placeholder="Ej: Python para Principiantes" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Descripción del Curso
+                            </label>
+
+                            <textarea class="form-textarea" id="cursoDescripcion" 
+                                      placeholder="Describe el contenido y objetivos del curso..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Estado del Curso <span class="required">*</span>
+                            </label>
+
+                            <select class="form-select" id="cursoEstado" required>
+                                <option value="">Seleccionar estado</option>
+                                <option value="En desarrollo">En desarrollo</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Suspendido">Suspendido</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Paso 2: Módulos -->
+                <div class="step-content" id="step2">
+                    <div id="modulosContainer">
+                        <!-- Módulos se añadirán dinámicamente aquí -->
+
+                        <div class="empty-state" id="noModulesMessage">
+                            <i class="fas fa-layer-group"></i>
+                            <p>No hay módulos agregados. Comienza agregando el primer módulo.</p>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-secondary-empty btn-add" id="btnAgregarModulo">
+                        <i class="fas fa-plus"></i> Agregar Módulo
+                    </button>
+                </div>
+                
+                <!-- Paso 3: Proyecto Final -->
+                <div class="step-content" id="step3">
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" class="checkbox" id="tieneProyecto">
+
+                            <label for="tieneProyecto" class="checkbox-label">
+                                Este curso incluye proyecto final
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="proyectoFields" style="display: none;">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Nombre del Proyecto <span class="required">*</span>
+                            </label>
+
+                            <input type="text" class="form-input" id="proyectoNombre" 
+                                   placeholder="Ej: Sistema de Recomendación con Machine Learning">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Descripción del Proyecto
+                            </label>
+
+                            <textarea class="form-textarea" id="proyectoDescripcion" 
+                                      placeholder="Describe los requisitos y objetivos del proyecto..."></textarea>
+                        </div>
+                        
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Puntuación Máxima <span class="required">*</span>
+                                </label>
+
+                                <input type="number" class="form-input" id="proyectoPuntuacion" 
+                                       min="1.00" max="20.00" step="0.01" value="20.00">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Tipo de Proyecto
+                                </label>
+
+                                <select class="form-select" id="proyectoTipo">
+                                    <option value="true">Grupal</option>
+                                    <option value="false">Individual</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary-empty" id="btnAnterior" style="display: none;">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                </button>
+                <div style="flex: 1;"></div>
+
+                <button class="btn btn-secondary-empty" id="btnCancelar">
+                    Cancelar
+                </button>
+
+                <button class="btn btn-primary" id="btnSiguiente">
+                    Siguiente <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <button class="btn btn-primary" id="btnGuardar" style="display: none;">
+                    <i class="fas fa-save"></i> Crear Curso
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/controllers/dashboards/admin.controller.js"></script>
+</body>
+</html>

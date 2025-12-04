@@ -1,0 +1,331 @@
+/* ===== SISTEMA DE COLORES ===== */
+:root {
+    --primary-50: #f8f2ff;
+    --primary-100: #ebe0ff;
+    --primary-200: #d3c2ff;
+    --primary-300: #b89bfd;
+    --primary-400: #a07bfd;
+    --primary-500: #8A3FFC;
+    --primary-600: #7833e0;
+    --primary-700: #6329a1;
+    --primary-800: #4c207a;
+    --primary-900: #33164b;
+    
+    --secondary-500: #FFD54B;
+    --tertiary-500: #F44C75;
+    
+    --neutral-50: #fdfbfd;
+    --neutral-100: #f5effe;
+    --neutral-200: #ebe4f7;
+    --neutral-300: #dccdf0;
+    --neutral-400: #b8abc9;
+    --neutral-500: #8d8199;
+    --neutral-600: #6a6174;
+    --neutral-700: #4f4955;
+    --neutral-800: #35313a;
+    --neutral-900: #1f1b23;
+    
+    --success-500: #22c55e;
+    --error-500: #ef4444;
+    
+    --bg-primary: #ffffff;
+    --bg-secondary: var(--neutral-50);
+    
+    --text-primary: var(--neutral-900);
+    --text-secondary: var(--neutral-700);
+    --text-tertiary: var(--neutral-500);
+    
+    --border-light: var(--neutral-200);
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+    
+    --gradient-login: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-300) 100%);
+}
+
+/* ===== ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--gradient-login);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ===== COMPONENTES ===== */
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--primary-500);
+    color: white;
+    box-shadow: 0 4px 0 rgba(76, 32, 122, 0.8);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(76, 32, 122, 0.8);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Formularios */
+.form-input {
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    background: var(--bg-primary);
+    transition: all 0.2s ease;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-300);
+    box-shadow: 0 0 0 3px rgb(138, 63, 252, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Estilos para mensajes de error/éxito */
+.form-message {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.form-message.error {
+    color: var(--error-500);
+    display: block;
+}
+
+.form-message.success {
+    color: var(--success-500);
+    display: block;
+}
+
+.form-input.error {
+    border-color: var(--error-500);
+}
+
+.form-input.success {
+    border-color: var(--success-500);
+}
+
+/* Contenedor para mostrar/ocultar contraseña */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--neutral-500);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.25rem;
+}
+
+/* ===== ESTILOS PARA EL FORMULARIO ===== */
+.register-container {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    background: var(--bg-primary);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.register-image {
+    flex: 1;
+    background-color: var(--primary-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    flex-direction: column;
+}
+
+.register-image img {
+	max-width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
+	object-fit: cover;
+	object-position: 20% center;
+}
+
+.register-form-container {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.register-header h2 {
+    color: var(--primary-700);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.register-header p {
+    color: var(--text-tertiary);
+}
+
+.register-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.register-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--text-tertiary);
+}
+
+.register-divider::before,
+.register-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-light);
+}
+
+.register-divider span {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: var(--primary-500);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        max-width: 500px;
+    }
+    
+    .register-image {
+        display: none;
+    }
+    
+    .register-form-container {
+        padding: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-form-container {
+        padding: 1.5rem;
+    }
+
+    .register-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .social-register {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para indicadores de fortaleza de contraseña */
+.password-strength {
+    margin-top: 0.5rem;
+    height: 4px;
+    background-color: var(--neutral-200);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    color: var(--neutral-600);
+}

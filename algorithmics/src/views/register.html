@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/pages/auth/register.css">
+
+    <title>Registro</title>
 </head>
 <body>
-    
+    <div class="register-container">
+        <div class="register-image">
+            <img src="../../public/algorithmics-salon9.jpeg" alt="Imagen de Algorithmics">
+        </div>
+        
+        <div class="register-form-container">
+            <div class="register-header">
+                <h2>Crear Cuenta</h2>
+                <p>Completa el formulario para registrarte</p>
+            </div>
+
+            <form class="register-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="firstName">Nombre</label>
+                        <input type="text" id="firstName" class="form-input" placeholder="Juan" required>
+                        
+                        <div class="form-message" id="firstNameError">Por favor ingresa tu nombre.</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="lastName">Apellido</label>
+                        <input type="text" id="lastName" class="form-input" placeholder="Pérez" required>
+                        
+                        <div class="form-message" id="lastNameError">Por favor ingresa tu apellido.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Correo electrónico</label>
+                    <input type="email" id="email" class="form-input" placeholder="nombrecorreo@dominio.com" required>
+                    
+                    <div class="form-message" id="emailError">Por favor ingresa un correo electrónico válido.</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Contraseña</label>
+
+                    <div class="password-container">
+                        <input type="password" id="password" class="form-input" placeholder="Crea una contraseña segura" required>
+                        <button type="button" class="toggle-password" id="togglePassword">Mostrar</button>
+                    </div>
+
+                    <div class="password-strength">
+                        <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                    </div>
+                    
+                    <div class="strength-text" id="passwordStrengthText">Contraseña débil</div>
+                    <div class="form-message" id="passwordError">La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula y un número.</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="confirmPassword">Confirmar contraseña</label>
+
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" class="form-input" placeholder="Repite tu contraseña" required>
+                        <button type="button" class="toggle-password" id="toggleConfirmPassword">Mostrar</button>
+                    </div>
+                    
+                    <div class="form-message" id="confirmPasswordError">Las contraseñas no coinciden.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Crear Cuenta</button>
+
+                <div class="register-divider">
+                    <span>¿Ya tienes una cuenta?</span>
+                </div>
+
+                <div class="login-link">
+                    <a href="login.html">Inicia sesión aquí</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/controllers/auth/register.controller.js"></script>
 </body>
 </html>
