@@ -246,12 +246,12 @@
                             <div class="grid-2">
                                 <div class="form-group">
                                     <label class="form-label" for="name">Nombre</label>
-                                    <input type="text" id="name" class="form-input" value="Carlos Rodríguez">
+                                    <input type="text" id="name" class="form-input" value="Carlos">
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-label" for="name">Apellido</label>
-                                    <input type="text" id="name" class="form-input" value="Carlos Rodríguez">
+                                    <label class="form-label" for="lastName">Apellido</label>
+                                    <input type="text" id="lastName" class="form-input" value="Rodríguez">
                                 </div>
 
                                 <div class="form-group">
@@ -260,8 +260,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-label" for="phone">Clave</label>
-                                    <input type="text" id="phone" class="form-input" value="+1 234 567 890">
+                                    <label class="form-label" for="password">Clave</label>
+                                    <input type="text" id="password" class="form-input" value="+1 234 567 890">
                                 </div>
 
                                 <div class="form-group">
@@ -471,9 +471,10 @@
                                 </tbody>
                             </table>
                         </div>
+
                         <div class="card-footer">
-                            <button class="btn btn-primary">
-                                <i class="fas fa-plus" style="padding-right: 0.5rem;"></i> Nuevo Usuario
+                            <button class="btn btn-primary" id="btnNuevoUsuario">
+                                <i class="fas fa-plus"></i> Nuevo Usuario
                             </button>
                         </div>
                     </div>
@@ -779,6 +780,124 @@
 
                 <button class="btn btn-primary" id="btnGuardar" style="display: none;">
                     <i class="fas fa-save"></i> Crear Curso
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear nuevo usuario -->
+    <div class="modal-overlay" id="modalNuevoUsuario">
+        <div class="modal" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-user-plus"></i> Crear Nuevo Usuario
+                </h3>
+                <button class="modal-close" id="closeModalUsuario">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="usuarioForm">
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Nombre <span class="required">*</span>
+                            </label>
+
+                            <input type="text" class="form-input" id="usuarioNombre" 
+                                   placeholder="Ej: María" required>
+                            <div class="error-message" id="errorNombre">El nombre es requerido</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Apellido <span class="required">*</span>
+                            </label>
+                            <input type="text" class="form-input" id="usuarioApellido" 
+                                   placeholder="Ej: González" required>
+                            <div class="error-message" id="errorApellido">El apellido es requerido</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            Correo Electrónico <span class="required">*</span>
+                        </label>
+                        <input type="email" class="form-input" id="usuarioEmail" 
+                               placeholder="Ej: usuario@email.com" required>
+                        <div class="error-message" id="errorEmail">Ingresa un correo electrónico válido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            Contraseña <span class="required">*</span>
+                        </label>
+                        <div class="password-input">
+                            <input type="password" class="form-input" id="usuarioClave" 
+                                   placeholder="••••••••" required minlength="6">
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="errorClave">
+                            La contraseña debe tener al menos 6 caracteres
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            Confirmar Contraseña <span class="required">*</span>
+                        </label>
+                        <div class="password-input">
+                            <input type="password" class="form-input" id="usuarioClaveConfirm" 
+                                   placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" id="togglePasswordConfirm">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="errorClaveConfirm">
+                            Las contraseñas no coinciden
+                        </div>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Rol <span class="required">*</span>
+                            </label>
+                            <select class="form-select" id="usuarioRol" required>
+                                <option value="">Seleccionar rol</option>
+                                <option value="1">Administrador</option>
+                                <option value="2">Estudiante</option>
+                                <option value="3">Personal Académico</option>
+                                <option value="4">Coordinador</option>
+                                <option value="5">Instructor</option>
+                            </select>
+                            <div class="error-message" id="errorRol">Selecciona un rol</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Estado
+                            </label>
+                            <div class="checkbox-group" style="margin-top: 0.5rem;">
+                                <input type="checkbox" class="checkbox" id="usuarioHabilitado" checked>
+                                <label for="usuarioHabilitado" class="checkbox-label">
+                                    Usuario habilitado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="btnCancelarUsuario">
+                    Cancelar
+                </button>
+                <button class="btn btn-primary" id="btnGuardarUsuario">
+                    <i class="fas fa-save"></i> Crear Usuario
                 </button>
             </div>
         </div>
