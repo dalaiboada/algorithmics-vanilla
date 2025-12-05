@@ -1,6 +1,8 @@
 import Sidebar from "../../components/Sidebar.js";
 import iniciarFuncionalidadReporte from "../../components/Reporte.js";  
+
 import inicializarDropdownLogout from "../../Modals/LogoutModal.js";
+import initCreateCourseModal from "../../Modals/CreateCourseModal.js";
 
 
 const adminPanelTitles = {
@@ -15,3 +17,4 @@ const adminPanelTitles = {
 Sidebar(adminPanelTitles);
 iniciarFuncionalidadReporte();
 inicializarDropdownLogout();
+initCreateCourseModal();
